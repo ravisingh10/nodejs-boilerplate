@@ -1,0 +1,5 @@
+module.exports = {
+    MIN_PASSWORD_LENGTH: 5,
+    FIRSTNAME_MIN_LENGHT: 3,
+    EMAIL_MIN_LENGTH: 5,
+}

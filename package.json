@@ -1,0 +1,45 @@
+{
+  "name": "nodejs-boilerplate",
+  "version": "1.0.0",
+  "description": "nodejs boilerplate codebase",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ravisingh10/nodejs-boilerplate.git"
+  },
+  "keywords": [
+    "nodejs",
+    "boilerplate",
+    "oauth"
+  ],
+  "author": "Ravi Kumar Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ravisingh10/nodejs-boilerplate/issues"
+  },
+  "homepage": "https://github.com/ravisingh10/nodejs-boilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "joi": "^17.2.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "mongoose": "^5.10.6",
+    "passport": "^0.4.1",
+    "passport-facebook": "^3.0.0",
+    "passport-google-oauth20": "^2.0.0",
+    "passport-instagram": "^1.0.0",
+    "passport-twitter": "^1.0.4",
+    "validator": "^13.1.17"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}
