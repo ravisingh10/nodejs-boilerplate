@@ -1,44 +1,40 @@
-const { string } = require('joi');
-const mongoose = require('mongoose');
-const { isEmail } = require('validator')
+const { Sequelize, DataTypes } = require('sequelize');
+const db = require('./../database/index').sequelize;
 
-const { FIRSTNAME_MIN_LENGHT } = require('../util/constants');
-const { Schema, model } = mongoose;
-
-const userSchema = new Schema({
+const User = db.define('User', {
     firstName: {
-        type: String,
-        required: true,
-        minlength: FIRSTNAME_MIN_LENGHT,
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    middleName: {
+        type: DataTypes.STRING,
+        allowNull: true
     },
     lastName: {
-        type: String,
-        required: false,
+        type: DataTypes.STRING,
+        allowNull: true,
     },
     username: {
-        type: String,
-        required: true,
+        type: DataTypes.STRING,
         unique: true,
+        allowNull: false,
     },
     email: {
-        type: String,
-        required: true,
+        type: DataTypes.STRING,
+        allowNull: false,
         unique: true,
         validate: {
-            validator: isEmail,
-            message: "Invalid email",
+            isEmail: true
         }
     },
     password: {
-        type: String,
-        required: false,
+        type: DataTypes.TEXT,
+        allowNull: true,
     },
     dateOfBirth: {
-        type: Date,
-        required: false,
-    }
+        type: DataTypes.DATE,
+        allowNull: true,
+    },
 });
-
-const User = model('User', userSchema);
 
 module.exports = User;

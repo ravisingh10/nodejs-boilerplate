@@ -1,3 +1,4 @@
+const { BaseError } = require("sequelize");
 const CustomError = require("../errors/custom-error.abstract");
 
 class ControllerAbstract {
@@ -6,11 +7,16 @@ class ControllerAbstract {
     }
 
     failedResponse(res, error, code) {
+        let errorMessage = error.message;
         if (error instanceof CustomError) {
             code = error.code;
         }
-        return res.status(code).send({ error: error.message });
+        // if(error instanceof BaseError ) {
+        //     errorMessage = error.toString();
+        // }
+        // console.error(error.message)
+        return res.status(code).send({ error: errorMessage });
     }
-}
+} BaseError
 
 module.exports = ControllerAbstract;

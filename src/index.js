@@ -18,7 +18,8 @@ app.use(cookieParser());
 
 app.use('/api', sessionMiddleware, routes);
 
-
-app.listen(PORT, () => {
-    console.log(`Listening at`, PORT);
-})
+db.sync().then(() =>
+    app.listen(PORT, () => {
+        console.log(`Listening at`, PORT);
+    })
+)
